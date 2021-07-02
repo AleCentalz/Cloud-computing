@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <label for="email">Correo electrónico</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" name="pass" placeholder="Password">
+                <input type="password" class="form-control" name="pass" placeholder="Constraseña">
                 <label for="pass">Contraseña</label>
             </div>
             <?php
