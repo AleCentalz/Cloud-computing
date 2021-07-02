@@ -8,16 +8,16 @@ class Login_Controller extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('usuarios_model');
         $this->load->database();
+        $this->load->model('usuarios_model');
         $this->load->library('session');
     }
-    public function index()
+    public function login()
     {
         $data['msg'] = $this->msg;
         $this->load->view('login_view',$data);
     }
-    public function login() //proceso de validacion para Login
+    public function validation() //proceso de validacion para Login
     {
         $email = $this->input->post('email');
         $pass = $this->input->post('pass');
@@ -25,15 +25,15 @@ class Login_Controller extends CI_Controller
 
         if ($user) {
             $this->session->set_userdata('nombre', $user->nombre);
-            redirect('welcome');
+            redirect('inicio_controller');
         } else {
             $this->msg = "Correo electrónico y/o Clave incorrecta";
-            $this->index();
+            redirect("login_controller/login");
         }
     }
     public function logout() //Salir
     {
         $this->session->sess_destroy();
-        redirect("login_controller");
+        redirect("login_controller/login");
     }
 }
