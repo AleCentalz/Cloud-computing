@@ -9,7 +9,7 @@ class Login_Controller extends CI_Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->database();
-        $this->load->model('Users_model');
+        $this->load->model('users_model');
         $this->load->library('session');
     }
     public function index()
@@ -20,7 +20,7 @@ class Login_Controller extends CI_Controller
     {
         $email = $this->input->post('email');
         $pass = $this->input->post('pass');
-        $user = $this->Users_model->get_usuario($email, $pass);
+        $user = $this->users_model->get_usuario($email, $pass);
 
         if ($user) {
             $this->session->set_userdata('nombre', $user->nombre);
