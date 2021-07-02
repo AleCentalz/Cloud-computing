@@ -1,33 +1,47 @@
-<!DOCTYPE html>
-<html>
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+?>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signin Template · Bootstrap v5.0</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="<?php echo base_url('css/signin.css') ?>">
 </head>
 
-<body>
-    <?php echo isset($error) ? $error : ''; ?>
-    <form method="post" action="<?php echo site_url('Login/process'); ?>">
-        <table cellpadding="2" cellspacing="2">
-            <tr>
-                <td>
-                <th>Username:</th>
-                </td>
-                <td><input type="text" name="user"></td>
-            </tr>
-            <tr>
-                <td>
-                <th>Password:</th>
-                </td>
-                <td><input type="password" name="pass"></td>
-            </tr>
+<body class="text-center">
 
-            <tr>
-                <td> </td>
-                <td><input type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
+    <main class="container my-3">
+        <form action="<?php echo site_url('login_controller/login'); ?>" method="POST">
+            <img class="mb-4" src="<?php echo base_url('img/user-icon.png') ?>" alt="icono usuario" width="72" height="72">
+            <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" name="email" placeholder="name@example.com">
+                <label for="email">Correo electrónico</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" name="pass" placeholder="Password">
+                <label for="pass">Contraseña</label>
+            </div>
+            <?php 
+                  if (isset($msg)){
+                     echo "<p class='mb-3'>".$msg."</p>";     
+                  }
+              ?>   
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+        </form>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
