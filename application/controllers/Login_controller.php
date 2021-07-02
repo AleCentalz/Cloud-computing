@@ -19,7 +19,7 @@ class Login_Controller extends CI_Controller
     {
         $email = $this->input->post('email');
         $pass = $this->input->post('pass');
-        $user = $this->usuarios_model->get_usuario($email, $pass);
+        $user = $this->users_model->get_usuario($email, $pass);
 
         if ($user) {
             $this->session->set_userdata('nombre', $user->nombre);
