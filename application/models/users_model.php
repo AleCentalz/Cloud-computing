@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class users_model extends CI_Model {
+class Users_model extends CI_Model {
 
 	public function get_usuario($email, $pass){
         $this->db->where('email',$email);
