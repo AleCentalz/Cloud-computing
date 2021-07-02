@@ -13,7 +13,7 @@ class Inicio_controller extends CI_Controller
 
     public function index()
     {
-        if (! $this->session->has_userdata('email')) {
+        if (! $this->session->has_userdata('nombre')) {
             redirect('login_controller/login');
         }
         $this->load->view('inicio_view');  

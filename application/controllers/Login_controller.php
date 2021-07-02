@@ -28,7 +28,8 @@ class Login_Controller extends CI_Controller
             redirect('inicio_controller');
         } else {
             $this->msg = "Correo electrónico y/o Clave incorrecta";
-            redirect("login_controller/login");
+            $data['msg'] = $this->msg;
+            redirect("login_view", $data);
         }
     }
     public function logout() //Salir

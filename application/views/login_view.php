@@ -16,8 +16,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 <body class="text-center">
 
-    <main class="container my-3 col-6">
-        <form action="<?php echo site_url('login_controller/login') ?>" method="POST">
+    <main class="container my-3 col-lg-4 col-sm-6">
+        <form action="<?php echo site_url('login_controller/validation') ?>" method="POST">
             <img class="mb-4" src="<?php echo base_url('img/user-icon.png') ?>" alt="icono usuario" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
