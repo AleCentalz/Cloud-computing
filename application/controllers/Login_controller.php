@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Login_Controller extends CI_Controller
 {
+    var $msg;
     public function __construct()
     {
         parent::__construct();
@@ -19,7 +20,7 @@ class Login_Controller extends CI_Controller
     {
         $email = $this->input->post('email');
         $pass = $this->input->post('pass');
-        $user = $this->users_model->get_usuario($email, $pass);
+        $user = $this->Users_model->get_usuario($email, $pass);
 
         if ($user) {
             $this->session->set_userdata('nombre', $user->nombre);
