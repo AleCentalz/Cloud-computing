@@ -8,8 +8,8 @@ class Login_Controller extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->database();
         $this->load->model('usuarios_model');
+        $this->load->database();
         $this->load->library('session');
     }
     public function index()
@@ -34,6 +34,6 @@ class Login_Controller extends CI_Controller
     public function logout() //Salir
     {
         $this->session->sess_destroy();
-        redirect("login_view");
+        redirect("login_controller");
     }
 }
