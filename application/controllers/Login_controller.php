@@ -29,7 +29,7 @@ class Login_Controller extends CI_Controller
         } else {
             $this->msg = "Correo electrónico y/o Clave incorrecta";
             $data['msg'] = $this->msg;
-            redirect("login_view", $data);
+            $this->load->view('login_view',$data);
         }
     }
     public function logout() //Salir

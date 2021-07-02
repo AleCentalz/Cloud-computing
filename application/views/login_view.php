@@ -20,7 +20,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
         <form action="<?php echo site_url('login_controller/validation') ?>" method="POST">
             <img class="mb-4" src="<?php echo base_url('img/user-icon.png') ?>" alt="icono usuario" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
-
+            <?php
+            if (isset($msg)) {
+                echo "<p class='mb-3'><small><em>" . $msg . "</em></small></p>";
+            }
+            ?>
             <div class="form-floating">
                 <input type="email" class="form-control" name="email" placeholder="name@example.com">
                 <label for="email">Correo electrónico</label>
@@ -29,11 +33,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <input type="password" class="form-control" name="pass" placeholder="Constraseña">
                 <label for="pass">Contraseña</label>
             </div>
-            <?php
-            if (isset($msg)) {
-                echo "<p class='mb-3'>" . $msg . "</p>";
-            }
-            ?>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         </form>
