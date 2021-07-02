@@ -17,9 +17,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="text-center">
 
     <main class="container my-3">
-        <form action="<?php echo site_url('login_controller/login'); ?>" method="POST">
+        <form action="<?php echo site_url('login_controller/login') ?>" method="POST">
             <img class="mb-4" src="<?php echo base_url('img/user-icon.png') ?>" alt="icono usuario" width="72" height="72">
-            <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
+            <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
 
             <div class="form-floating">
                 <input type="email" class="form-control" name="email" placeholder="name@example.com">
@@ -29,19 +29,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 <input type="password" class="form-control" name="pass" placeholder="Password">
                 <label for="pass">Contraseña</label>
             </div>
-            <?php 
-                  if (isset($msg)){
-                     echo "<p class='mb-3'>".$msg."</p>";     
-                  }
-              ?>   
+            <?php
+            if (isset($msg)) {
+                echo "<p class='mb-3'>" . $msg . "</p>";
+            }
+            ?>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
         </form>
     </main>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
 </body>
 
 </html>

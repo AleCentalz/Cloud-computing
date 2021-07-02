@@ -14,7 +14,8 @@ class Login_Controller extends CI_Controller
     }
     public function index()
     {
-        $this->load->view('login_view');
+        $data['msg'] = $this->msg;
+        $this->load->view('login_view',$data);
     }
     public function login() //proceso de validacion para Login
     {
@@ -24,7 +25,7 @@ class Login_Controller extends CI_Controller
 
         if ($user) {
             $this->session->set_userdata('nombre', $user->nombre);
-            redirect('Welcome');
+            redirect('welcome');
         } else {
             $this->msg = "Correo electrónico y/o Clave incorrecta";
             $this->index();
@@ -33,6 +34,6 @@ class Login_Controller extends CI_Controller
     public function logout() //Salir
     {
         $this->session->sess_destroy();
-        redirect("Login");
+        redirect("login_view");
     }
 }
